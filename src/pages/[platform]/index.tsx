@@ -1,18 +1,19 @@
 import { useRouter } from "next/router";
-import Page1 from "../page1";
-import Page2 from "../page2";
+import PlatformA from "./platforma";
+import PlatformB from "./platformb";
 
-const SlugPage = () => {
+const TypeIndexPage = () => {
   const router = useRouter();
   const { platform } = router.query;
+
   switch (platform) {
-    case "page1":
-      return <Page1 />;
-    case "page2":
-      return <Page2 />;
+    case "platforma":
+      return <PlatformA />;
+    case "platformb":
+      return <PlatformB />;
     default:
-      return <h1>Page not found</h1>;
+      return <PlatformA />;
   }
 };
 
-export default SlugPage;
+export default TypeIndexPage;
